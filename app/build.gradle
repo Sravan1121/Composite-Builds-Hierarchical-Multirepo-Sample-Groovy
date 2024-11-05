@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id 'java'  // Add the Java plugin to ensure Java-related tasks are available
 }
 
 group "org.sample"
@@ -7,6 +8,12 @@ version "1.0"
 
 application {
     mainClass = "org.sample.myapp.Main"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)  // Specify the Java version explicitly
+    }
 }
 
 dependencies {
